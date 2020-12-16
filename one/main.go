@@ -1,11 +1,11 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"log"
-    "strconv"
-    "bufio"
-    "os"
+	"os"
+	"strconv"
 )
 
 const Sum int = 2020
@@ -27,18 +27,18 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-    defer file.Close()
+	defer file.Close()
 
-    // convert to slice of ints
-    scanner := bufio.NewScanner(file)
-    nums := make([]int, 0)
-    for scanner.Scan() {
-        i, _:= strconv.Atoi(scanner.Text())
-        nums = append(nums, i)
-    }
+	// convert to slice of ints
+	scanner := bufio.NewScanner(file)
+	nums := make([]int, 0)
+	for scanner.Scan() {
+		i, _ := strconv.Atoi(scanner.Text())
+		nums = append(nums, i)
+	}
 	// solve first part
 	num1, num2 := twoSum(nums, Sum)
-    fmt.Println(num1, num2)
+	fmt.Println(num1, num2)
 	fmt.Println(num1 * num2)
 
 }

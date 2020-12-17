@@ -23,10 +23,10 @@ func twoSum(nums []int, sum int) (int, int) {
 
 func threeSum(nums []int, sum int) (int, int, int) {
 	for i, num := range nums {
-		if Sum - num > 0  {
-            rest := make([]int, len(nums)-1)
-            rest = append(nums[:i])
-            rest = append(nums[i+1:])
+		if Sum-num > 0 {
+			rest := make([]int, len(nums)-1)
+			rest = append(nums[:i])
+			rest = append(nums[i+1:])
 			num1, num2 := twoSum(rest, Sum-num)
 			if num1 != 0 && num2 != 0 {
 				return num, num1, num2
@@ -52,10 +52,11 @@ func main() {
 		i, _ := strconv.Atoi(scanner.Text())
 		nums = append(nums, i)
 	}
-	// solve first part
+	// Part 11111111111
 	num1, num2 := twoSum(nums, Sum)
 	fmt.Println(num1 * num2)
 
+	// Part 2
 	num1, num2, num3 := threeSum(nums, Sum)
 	fmt.Println(num1 * num2 * num3)
 

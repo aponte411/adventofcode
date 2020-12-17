@@ -21,6 +21,22 @@ func twoSum(nums []int, sum int) (int, int) {
 	return 0, 0
 }
 
+func threeSum(nums []int, sum int) (int, int, int) {
+	for i, num := range nums {
+		if Sum - num > 0  {
+            rest := make([]int, len(nums)-1)
+            rest = append(nums[:i])
+            rest = append(nums[i+1:])
+			num1, num2 := twoSum(rest, Sum-num)
+			if num1 != 0 && num2 != 0 {
+				return num, num1, num2
+			}
+
+		}
+	}
+	return 0, 0, 0
+}
+
 func main() {
 	// read in file
 	file, err := os.Open("input.txt")
@@ -38,7 +54,9 @@ func main() {
 	}
 	// solve first part
 	num1, num2 := twoSum(nums, Sum)
-	fmt.Println(num1, num2)
 	fmt.Println(num1 * num2)
+
+	num1, num2, num3 := threeSum(nums, Sum)
+	fmt.Println(num1 * num2 * num3)
 
 }

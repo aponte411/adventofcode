@@ -49,8 +49,8 @@ func main() {
 	scanner := bufio.NewScanner(file)
 	nums := make([]int, 0)
 	for scanner.Scan() {
-		i, _ := strconv.Atoi(scanner.Text())
-		nums = append(nums, i)
+		num, _ := strconv.Atoi(scanner.Text())
+		nums = append(nums, num)
 	}
 	// Part 11111111111
 	num1, num2 := twoSum(nums, Sum)
